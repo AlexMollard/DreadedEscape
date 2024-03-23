@@ -28,10 +28,6 @@ DreadedEscape is an immersive multiplayer experience where players find themselv
 
 We welcome contributions from the community to enhance DreadedEscape. If you have ideas, bug fixes, or improvements, feel free to submit a pull request.
 
-## Support
-
-For any questions, issues, or feedback, please contact us at [support@dreadedescape.com](mailto:support@dreadedescape.com).
-
 ## Credits
 
 - Game Design: Declan Rogers
