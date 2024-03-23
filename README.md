@@ -8,7 +8,7 @@ DreadedEscape is an immersive multiplayer experience where players find themselv
 
 ## Features
 
-- **Multiplayer Madness:** Team up with friends or strangers in real-time multiplayer gameplay.
+- **Multiplayer Madness:** Team up with friends or strangers in real-time multiplayer game-play.
 - **Horror Puzzle Challenges:** Solve intricate puzzles that test your wit and nerve.
 - **Eerie Atmosphere:** Immerse yourself in a dark and haunting environment.
 - **Terrifying Adversaries:** Encounter terrifying foes that will stop at nothing to prevent your escape.
@@ -31,7 +31,7 @@ We welcome contributions from the community to enhance DreadedEscape. If you hav
 ## Credits
 
 - Game Design: Declan Rogers
-- Programming: Alex Mollard, Connor Younge, Declan Rogers
+- Programming: Alex Mollard, Connor Young, Declan Rogers
 
 ## License
 
