@@ -15,15 +15,22 @@ jobs:
         with:
             lfs: true
 
-      - name: Setup Unreal Engine
-        uses: jglim/ue4-actions/setup@v1
+      - name: Cook, Stage & Package UE Project
+        uses: OrchidIsle/UE5-Build-Project@latest
         with:
-            engine-version: '5.3.2'  # Specify your Unreal Engine version
-            github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build Project
-        run: |
-            cd UE5-Build-Project  # Change directory to your Unreal Engine project
-            # Execute commands to build your Unreal Engine project here
-            # For example:
-            ./Engine/Build/BatchFiles/RunUAT.bat BuildCookRun -project="./DreadedEscape.uproject" -platform=Win64 -clientconfig=Development -serverconfig=Development -cook -allmaps -build -stage -pak -archive -archivedirectory="/Output/"
+            RUNUAT_PATH: 'C:/Program Files/Epic Games/UE_5.3/Engine/Build/BatchFiles/RunUAT.bat'
+            UPROJECT_PATH: ./DreadedEscape.uproject
+            BUILD_CONFIG: Development
+            PLATFORM: Win64
+            COOK: true
+            STAGE: true
+            PACKAGE: false
+            PAK: false
+            SERVER: false
+            ARCHIVE: false
+            ARCHIVE_PATH: 'C:/Archives/MyGame'
+            EDITOR: true
+            ENCRYPT_INI: true
+            RELEASE: '1.0.0'
+            PATCH: '0.9.0'
+            MAPS: 'Map1,Map2'
