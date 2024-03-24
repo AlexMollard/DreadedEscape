@@ -1,1 +1,5 @@
-Tmp
+name: Build Action
+on:
+  push:
+    branches:
+      - 'Build'
