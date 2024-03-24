@@ -25,7 +25,16 @@ void UTP_PickUpComponent::OnSphereBeginOverlap(UPrimitiveComponent* OverlappedCo
 		// Notify that the actor is being picked up
 		OnPickUp.Broadcast(Character);
 
-		// Unregister from the Overlap Event so it is no longer triggered
-		OnComponentBeginOverlap.RemoveAll(this);
+		// Output to the log that the character picked up the object
+		UE_LOG(LogTemp, Warning, TEXT("Character %s picked up the object"), *Character->GetName());
+		
+		// Get the actor that owns this component
+		AActor* Owner = GetOwner();
+
+		// Destroy the actor that owns this component
+		Owner->Destroy();
+
+		// Output to the log that the object was destroyed
+		UE_LOG(LogTemp, Warning, TEXT("Object %s was destroyed"), *GetName());
 	}
 }
