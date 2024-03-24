@@ -1,1 +1,34 @@
-Tmp
+name: Build Unreal Engine Project
+
+on:
+  push:
+    branches:
+      - build  # Adjust the branch name as needed
+
+jobs:
+  build:
+    runs-on: windows-latest  # You can choose other OS if needed
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Unreal Engine
+        uses: jglim/ue4-actions/setup@v1
+        with:
+          engine-version: '5.3.2'  # Specify your Unreal Engine version
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build Project
+        run: |
+          # Enter commands to build your Unreal Engine project here
+          # For example:
+          ./Engine/Build/BatchFiles/RunUAT.bat BuildCookRun -project="./DreadedEscape.uproject" -platform=Win64 -clientconfig=Development -serverconfig=Development -cook -allmaps -build -stage -pak -archive -archivedirectory="./Output/"
+
+      - name: Uploading the build
+        uses: actions/upload-artifact@v3
+        with:
+            name: Build
+            path: "./Output/Windows/"
+
+      # You can add additional steps like deploying artifacts, running tests, etc.
